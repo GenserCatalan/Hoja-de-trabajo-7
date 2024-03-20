@@ -1,0 +1,10 @@
+House, Casa
+Car, Coche
+Dog, Perro
+Cat, Gato
+Tree, Árbol
+Book, Libro
+Chair, Silla
+Table, Mesa
+Computer, Computadora
+School, Escuela
