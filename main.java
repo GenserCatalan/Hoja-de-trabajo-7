@@ -20,7 +20,7 @@ public class main {
                 System.out.println("\nIngrese el nombre del archivo de texto:");
                 scanner.nextLine(); 
                 String textFile = scanner.nextLine();
-                LectorArchivo(dictionaryTree, textFile);
+                Traductor(dictionaryTree, textFile);
                 break;
             case 2:
                 System.out.println("\nDiccionario ordenado:");
@@ -58,7 +58,7 @@ public class main {
         return dictionaryTree;
     }
 
-    private static void LectorArchivo(BinarySearchTree<Association> dictionaryTree, String filename) {
+    private static void Traductor(BinarySearchTree<Association> dictionaryTree, String filename) {
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
             String line;
             while ((line = br.readLine()) != null) {

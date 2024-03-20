@@ -4,28 +4,40 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class CodeTest {
-        private BinarySearchTree<Association> tree;
-
-    @Test
-    public void testGetters() {
-        Association Association = new Association("House", "Casa");
-
-        assertEquals("House", Association.getEnglishWord());
-        assertEquals("Casa", Association.getSpanishTranslation());
-    }
-
-    @Test
-    public void testToString() {
-        Association Association = new Association("Dog", "Perro");
-
-        assertEquals("(Dog, Perro)", Association.toString());
-    }
+    private BinarySearchTree<Association> tree;
 
     @Before
     public void setUp() {
         tree = new BinarySearchTree<>();
     }
 
+    /**
+     * Prueba los métodos getter de la clase Association.
+     * Verifica que los métodos getEnglishWord() y getSpanishTranslation() retornen los valores esperados.
+     */
+    @Test
+    public void testGetters() {
+        Association association = new Association("House", "Casa");
+
+        assertEquals("House", association.getEnglishWord());
+        assertEquals("Casa", association.getSpanishTranslation());
+    }
+
+    /**
+     * Prueba el método toString de la clase Association.
+     * Verifica que el método toString() retorne la representación adecuada de la asociación en forma de cadena.
+     */
+    @Test
+    public void testToString() {
+        Association association = new Association("Dog", "Perro");
+
+        assertEquals("(Dog, Perro)", association.toString());
+    }
+
+    /**
+     * Prueba la inserción y búsqueda de asociaciones en un árbol binario de búsqueda.
+     * Inserta varias asociaciones en el árbol y luego busca estas asociaciones para verificar que se encuentren correctamente.
+     */
     @Test
     public void testInsertAndSearch() {
         Association association1 = new Association("House", "Casa");
@@ -52,16 +64,17 @@ public class CodeTest {
             assertNull("Association 'Car' not found in the tree.", found2);
         }
 
-        assertNull(notFound); 
+        assertNull(notFound); // Cat should not be found
     }
 
-
+    /**
+     * Prueba la búsqueda en un árbol binario de búsqueda vacío.
+     * Verifica que la búsqueda en un árbol vacío retorne null, ya que no debería encontrar ninguna asociación.
+     */
     @Test
     public void testEmptyTree() {
         Association notFound = tree.search(new Association("House", ""));
 
-        assertNull(notFound); 
+        assertNull(notFound); // House should not be found in an empty tree
     }
-
-
 }
