@@ -2,7 +2,7 @@ House, Casa
 Car, Coche
 Dog, Perro
 Cat, Gato
-Tree, Árbol
+Tree, Arbol
 Book, Libro
 Chair, Silla
 Table, Mesa
